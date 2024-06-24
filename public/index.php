@@ -21,3 +21,7 @@ $dotenv->load(ROOT_PATH . '/.env');
 set_exception_handler('\Framework\ErrorHandler::handleException');
 set_error_handler('\Framework\ErrorHandler::handleError');
 
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+if (!$path) {
+    throw new UnexpectedValueException('Malformed URI: ' . $_SERVER['REQUEST_URI']);
+}
