@@ -17,8 +17,7 @@ spl_autoload_register(function (string $class) {
 use Framework\Dotenv;
 use Framework\RouteDispatcher;
 
-$dotenv = new Dotenv();
-$dotenv->load(ROOT_PATH . '/.env');
+Dotenv::load(ROOT_PATH . '/.env');
 
 set_exception_handler('\Framework\ErrorHandler::handleException');
 set_error_handler('\Framework\ErrorHandler::handleError');
