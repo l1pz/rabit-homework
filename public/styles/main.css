@@ -1,0 +1,48 @@
+:root {
+    --color-bg: #1d2021;
+    --color-fg: #d5c4a1;
+    --color-acc1: #fe8019;
+    --color-acc2: #fb4934;
+    --color-acc3: #b8bb26;
+    --color-acc4: #83a598;
+}
+
+body {
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-family: monospace;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: var(--color-acc1);
+
+}
+
+a:visited  {
+    color: var(--color-acc3);
+
+}
+
+a:hover  {
+    color: var(--color-acc2);
+
+}
+
+a:active  {
+    color: var(--color-acc4);
+}
+
+#nav>li {
+    list-style-type: none;
+
+}
