@@ -12,7 +12,10 @@ readonly class UserController
     public function __construct(private UserService $userService, private Viewer $viewer)
     {
     }
-
+    /**
+     * Renders the users page
+     * @return void
+     */
     public function index(): void
     {
         $users = $this->userService->getAll();

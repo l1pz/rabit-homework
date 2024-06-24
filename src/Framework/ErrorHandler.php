@@ -10,7 +10,14 @@ use Throwable;
 
 class ErrorHandler
 {
-    public static function handleException(Throwable $exception)
+    /**
+     * Handle error by returning an error page based on the exception type
+     * If $_ENV['SHOW_ERRORS'] is true, then it logs the error instead
+     * @param Throwable $exception The exception throwns
+     * @return void
+     * @throws Throwable
+     */
+    public static function handleException(Throwable $exception) : void
     {
         if ($exception instanceof PageNotFoundException) {
             http_response_code(404);
@@ -30,7 +37,16 @@ class ErrorHandler
         throw $exception;
     }
 
-    public static function handleError(int $errno, string $errstr, string $errfile, int $errline)
+    /**
+     * Convert PHP errors to exceptions to be handled by the exceptionHandler
+     * @param int $errno
+     * @param string $errstr
+     * @param string $errfile
+     * @param int $errline
+     * @return void
+     * @throws ErrorException
+     */
+    public static function handleError(int $errno, string $errstr, string $errfile, int $errline):void
     {
         throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
     }

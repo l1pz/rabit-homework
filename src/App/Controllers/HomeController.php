@@ -9,6 +9,10 @@ readonly class HomeController
 {
     public function __construct(private Viewer $viewer)
     {}
+    /**
+     * Renders the home
+     * @return void
+     */
     public function index(): void
     {
         echo $this->viewer->render('shared/header.php', ['title' => 'Users']);

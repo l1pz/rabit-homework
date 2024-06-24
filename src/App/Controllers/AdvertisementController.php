@@ -13,6 +13,10 @@ readonly class AdvertisementController
     {
     }
 
+    /**
+     * Renders the advertisements page
+     * @return void
+     */
     public function index(): void
     {
         $advertisements = $this->advertisementService->getAll();
