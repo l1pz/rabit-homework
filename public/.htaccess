@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# disable rewrite if file exists
+RewriteCond %{REQUEST_FILENAME}  !-f
+# disable rewrite if directory exists
+RewriteCond %{REQUEST_FILENAME}  !-d
+# disable rewrite if symlink exists
+RewriteCond %{REQUEST_FILENAME}  !-l
+
+# rewrite every path to index.php
+# as the routing will happen there
+RewriteRule ^ index.php
