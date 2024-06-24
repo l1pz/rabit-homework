@@ -20,7 +20,7 @@ class Viewer
         ob_start();
 
         // render the template to output buffer
-        require ROOT_PATH . "/views/$template";
+        require ROOT_PATH . "/src/App/Views/$template";
 
         // return the rendered template
         return ob_get_clean();
