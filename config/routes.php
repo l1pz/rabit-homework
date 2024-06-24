@@ -3,8 +3,8 @@
 use Framework\Router;
 
 $router = new Router;
-$router->add('/', 'home', 'index');
-$router->add('/users', 'users', 'index');
-$router->add('/advertisements', 'advertisements', 'index');
+$router->add('/', 'HomeController', 'index');
+$router->add('/users', 'UserController', 'index');
+$router->add('/advertisements', 'AdvertisementsController', 'index');
 
 return $router;
