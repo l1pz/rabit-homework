@@ -18,4 +18,6 @@ use Framework\Dotenv;
 $dotenv = new Dotenv();
 $dotenv->load(ROOT_PATH . '/.env');
 
-var_dump($_ENV);
+set_exception_handler('\Framework\ErrorHandler::handleException');
+set_error_handler('\Framework\ErrorHandler::handleError');
+
