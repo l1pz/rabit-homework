@@ -7,9 +7,9 @@ namespace App\Controllers;
 use App\Services\UserService;
 use Framework\Viewer;
 
-class UserController
+readonly class UserController
 {
-    public function __construct(private readonly UserService $userService, private readonly Viewer $viewer)
+    public function __construct(private UserService $userService, private Viewer $viewer)
     {
     }
 

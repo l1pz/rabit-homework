@@ -7,9 +7,9 @@ use App\Services\AdvertisementService;
 use App\Services\UserService;
 use Framework\Viewer;
 
-class AdvertisementController
+readonly class AdvertisementController
 {
-    public function __construct(private readonly AdvertisementService $advertisementService, private readonly Viewer $viewer)
+    public function __construct(private AdvertisementService $advertisementService, private Viewer $viewer)
     {
     }
 

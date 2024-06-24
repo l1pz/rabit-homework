@@ -7,7 +7,7 @@ namespace App\Services;
 use App\Models\AdvertisementModel;
 use PDO;
 
-class AdvertisementService
+readonly class AdvertisementService
 {
     public function __construct(private DatabaseService $database) {}
 
