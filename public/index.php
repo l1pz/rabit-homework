@@ -7,3 +7,9 @@ spl_autoload_register(function (string $class) {
     $class = str_replace('\\', '/', $class);
     require ROOT_PATH . "/src/$class.php";
 });
+
+use Framework\Dotenv;
+$dotenv = new Dotenv();
+$dotenv->load(ROOT_PATH . '/.env');
+
+var_dump($_ENV);
