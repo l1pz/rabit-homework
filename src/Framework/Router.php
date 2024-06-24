@@ -23,12 +23,16 @@ class Router
         $this->routes[] = new Route($path, $controller, $action);
     }
 
-    public function match(string $path) : array|bool
+    /**
+     * @param string $path Path that should be matched
+     * @return Route|bool Returns Route if matches, false otherwise
+     */
+    public function match(string $path) : Route|bool
     {
+        // trim trailing slash from the path
         $path = rtrim($path, '/');
         foreach ($this->routes as $route) {
-            $routePath = $route['path'];
-            if ($path == $routePath) {
+            if ($path == $route->path) {
                 return $route;
             }
         }
