@@ -6,7 +6,7 @@ namespace App\Services;
 
 use PDO;
 
-readonly class Database
+readonly class DatabaseService
 {
     public function __construct(
         public string $host,
