@@ -36,7 +36,7 @@ readonly class RouteDispatcher
 
         // construct the controller itself from its name
         // using dependency injection
-        //$controller = $this->services->get($controllerName);
-        echo "$controllerName -> $action";
+        $controller = $this->services->get($controllerName);
+        $controller->$action();
     }
 }
